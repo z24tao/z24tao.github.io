@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ZeroComet's Site</title>
+		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+	</head>
+	<body>
+		<div style="display:inline:block;background-color:rgb(240,255,255);position:fixed;width:100vw">
+			<img src="images/title.jpg" style="margin-left:25vw;width:50vw">
+		</div>
+		<div style="display:inline:block;background-color:rgb(240,255,255)">
+			<img src="images/title.jpg" style="margin-left:25vw;width:50vw">
+		</div>
+		<div>
+			<div class="w3-sidenav w3-green">
+				<a>Home</a>
+				<a>Projects</a>
+				<a>Piano</a>
+				<a>Others</a>
+			</div>
+			<div style="margin-left:200px">
+				<div class="w3-half" style="float:left">
+					<div class="w3-card-8" id="profileFrame" style="height:calc(100vh - 8vw)">
+						<img id="profile" src="images/profile.jpg" style="padding:20px"/>
+					</div>
+				</div>
+				<div class="w3-half">
+					<button onclick="toggleTab('tab1')" class="w3-btn-block w3-red">Welcome</button>
+					<div class="w3-hide w3-pale-red w3-show" id="tab1" style="float:right">
+						<p style="padding:10px">Hello and welcome to ZeroComet's Cloud!
+						This is where I share everything cool and interesting, so please take a good look around!
+						By the way, there really isn't anything about zeros or comets on this website.
+						</p>
+					</div>
+					<button onclick="toggleTab('tab2')" class="w3-btn-block w3-red">Who am I?</button>
+					<div class="w3-hide w3-pale-red" id="tab2" style="float:right">
+						<p style="padding:10px">
+						My (official) name is Zhuofu Tao, also known as Derek (in person) or ZeroComet (online).
+						I'm a second year Computer Science student at University of Waterloo.
+						During my spare time, I'm also a pianist and a game developer.
+						</p>
+						<div style="padding:10px">
+							<button onclick="toggleTab('tab3')" class="w3-btn-block w3-blue">Devoted Developer</button>
+							<div class="w3-hide w3-pale-blue" id="tab3" style="margin-bottom:10px">
+								<p style="padding:10px">
+								Click on any project for details!
+								</p>
+							</div>
+							<button onclick="toggleTab('tab4')" class="w3-btn-block w3-blue">Mathemagical Man</button>
+							<div class="w3-hide w3-pale-blue" id="tab4" style="margin-bottom:10px">
+								<p style="padding:10px">
+								Here is a random math question if you are like me and love these brain challenges!
+									<br/><button style="margin-left:10px;margin-top:10px" onclick="toggleTab('tab3')">Nah I don't like math</button>
+									<br/><button style="margin-left:10px;margin-top:10px">Show me the answer</button>
+								</p>
+							</div>
+							<button onclick="toggleTab('tab5')" class="w3-btn-block w3-blue">Passionate Pianist</button>
+							<div class="w3-hide w3-pale-blue" id="tab5" style="margin-bottom:10px">
+								<p style="padding:10px">
+								If you like these videos please go to my youtube channel and hit like and subscribe!
+								</p>
+							</div>
+						<div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			if (window.innerWidth < 601) {
+				document.getElementById("profileFrame").style="display:inline-block";
+			} else {
+				document.getElementById("profileFrame").style="height:calc(100vh - 8vw)";
+			}
+			document.getElementById("profile").width = Math.min(document.getElementById("profileFrame").offsetWidth, document.getElementById("profileFrame").offsetHeight);
+			window.onresize = function() {
+				if (window.innerWidth < 601) {
+					document.getElementById("profileFrame").style="display:inline-block";
+				} else {
+					document.getElementById("profileFrame").style="height:calc(100vh - 8vw)";
+				}
+				document.getElementById("profile").width = Math.min(document.getElementById("profileFrame").offsetWidth, document.getElementById("profileFrame").offsetHeight);
+			}
+			function toggleTab(tab) {
+				var x = document.getElementById(tab);
+				if (x.className.indexOf("w3-show") == -1) {
+					x.className += " w3-show";
+				} else { 
+					x.className = x.className.replace(" w3-show", "");
+				}
+			}
+		</script>
+	</body>
+</html>
